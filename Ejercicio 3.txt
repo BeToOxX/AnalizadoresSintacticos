@@ -1,0 +1,6 @@
+Lunes
+11,12,Break,18
+Martes
+24,Break,25,28
+Miércoles
+37,38,Break,40,Break,50

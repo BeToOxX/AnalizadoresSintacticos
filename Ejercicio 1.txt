@@ -1,0 +1,9 @@
+
+<Javier Perez>
+47111
+"Mesa de centro" - (12; 4) - 1 - 120.00  
+"Silla" - (9; 7) - 4 - 49.90  
+"Jarrón chino" - (4; 3) - 1 - 60.50 
+"Lámpara de pie" - (8; 5) - 1 - 39.80 
+"Copa de vino" - (9; 3) - 4 - 25.10
+FIN_FORMULARIO
