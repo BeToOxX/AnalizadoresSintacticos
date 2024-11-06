@@ -1,0 +1,40 @@
+package codigo;
+
+import java_cup.runtime.Symbol;
+
+parser code
+{:
+    private Symbol s;
+
+    public void syntax_error(Symbol s) {
+        System.out.println("Error de sintaxis en línea " + (s.left + 1) + ", columna " + (s.right + 1) + ": " + s.value);
+    }
+
+    public Symbol getS(){
+        return this.s;
+    }
+:};
+
+ // Terminales
+terminal NombreP, CodigoP, articulo, separador2, parA, numero2, PuntoyComa, parC, precio, Error, FIN_FORMULARIO;
+
+// No terminales
+non terminal FORMULARIO, LISTA_ARTICULOS, ARTICULO;
+
+
+start with FORMULARIO;
+
+
+// Reglas de gramática
+FORMULARIO ::= NombreP CodigoP LISTA_ARTICULOS FIN_FORMULARIO
+				 {: System.out.println("Producción FORMULARIO alcanzada con NombreP y CodigoP."); :}
+			  | Error;
+
+
+LISTA_ARTICULOS ::= ARTICULO LISTA_ARTICULOS
+					{: System.out.println("Producción LISTA_ARTICULOS alcanzada con múltiples ARTICULOS."); :}
+				  | ARTICULO;
+
+
+ARTICULO ::= articulo separador2 parA numero2 PuntoyComa numero2 parC separador2 numero2 separador2 precio
+			 {: System.out.println("Producción ARTICULO alcanzada."); :};
