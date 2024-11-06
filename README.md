@@ -8,9 +8,9 @@
 - Ejercicio en CLase Analizador Lexico
 
 ---------------------
-#EJERCICIO TIENDA 7-09-2024
+# 1. EJERCICIO TIENDA 7-09-2024
 
-###Para los tokens del archivo FrmPrincipal.java:
+### Para los tokens del archivo FrmPrincipal.java:
 
 	switch (token) {
             case NombreP:
@@ -78,7 +78,7 @@
 		
 		
 ----------------------
-###Para el archivo de Lexer.Flex se colocó:
+### Para el archivo de Lexer.Flex se colocó:
 	digito = [0-9] 
 	numero2 = [0-9]+          
 	precio = [0-9]+\.[0-9]{2}
@@ -139,7 +139,7 @@
 
 -------------
 
-###Para el archivo de LexerCup.Flex se colocó:
+### Para el archivo de LexerCup.Flex se colocó:
 	digito = [0-9] 
 	numero2 = [0-9] +
 	NombreP = "<" [a-zA-Z]+([ ][a-zA-Z]+)* ">"
@@ -204,7 +204,7 @@
 	{FIN_FORMULARIO} { return new Symbol(sym.FIN_FORMULARIO, yychar, yyline, yytext()); }
 ---
 
-###Para el archivo de Sintax.cup se colocó:
+### Para el archivo de Sintax.cup se colocó:
 
 	// Terminales
 	terminal NombreP, CodigoP, articulo, separador2, parA, numero2, PuntoyComa, parC, precio, Error, FIN_FORMULARIO;
@@ -232,7 +232,7 @@
 			 
 ---
 
-###Y por último, para los tokens en Tokens.java, se colocó:
+### Y por último, para los tokens en Tokens.java, se colocó:
 	public enum Tokens {
 	NombreP,
     codigoP,
@@ -249,7 +249,7 @@
 
 # 2. Ejercicio Analizador Lexico GPS
 
-###Para los tokens del archivo FrmPrincipal.java:
+### Para los tokens del archivo FrmPrincipal.java:
 
         switch (token) {
             case TRACKPOINT:
@@ -316,7 +316,7 @@
         }
 
 ----
-###Para el archivo de Lexer.Flex se colocó:
+### Para el archivo de Lexer.Flex se colocó:
 	TRACKPOINT = "TRACKPOINT"
 	latitud = "lat"
 	igual = "="
@@ -382,7 +382,7 @@
 	{END_TRACKPOINT} {lexeme = yytext(); return END_TRACKPOINT; }
 
 ---
-###Para el archivo de LexerCup.Flex se colocó:
+### Para el archivo de LexerCup.Flex se colocó:
 	TRACKPOINT = "TRACKPOINT"
 	latitud = "lat"
 	igual = "="
@@ -454,7 +454,7 @@
 	{END_TRACKPOINT} {return new Symbol(sym.END_TRACKPOINT, yychar, yyline, yytext());}
 
 ---
-###Para el archivo de Sintax.cup se colocó:
+### Para el archivo de Sintax.cup se colocó:
     // Terminales
     terminal TRACKPOINT, latitud, igual, numero, longitud, tiempo, fecha, hora, speed, END_TRACKPOINT, menorQue, mayorQue, Error;
 
@@ -493,7 +493,7 @@
     SPEED ::= 
     	menorQue speed numero mayorQue;
 ---
-###Y por último, para los tokens en Tokens.java, se colocó:
+### Y por último, para los tokens en Tokens.java, se colocó:
 	public enum Tokens {
 	TRACKPOINT,
     latitud,
@@ -513,7 +513,7 @@
 
 # 3. Ejercicio en CLase Analizador Lexico
 
-###Para los tokens del archivo FrmPrincipal.java:
+### Para los tokens del archivo FrmPrincipal.java:
 	switch (token) {
             case dias:
                 fila[0] = "Dias de la Semana";
@@ -543,7 +543,7 @@
                 break;
         }
 ----
-###Para el archivo de Lexer.Flex se colocó:
+### Para el archivo de Lexer.Flex se colocó:
 	dias = ( "Lunes" | "Martes" | "Miércoles" | "Jueves" | "Viernes" | "Sábado" | "Domingo" )
 
 	evento = [0-9]+
@@ -587,7 +587,7 @@
     return Error; 
 	}
 ---
-###Para el archivo de LexerCup.Flex se colocó:
+### Para el archivo de LexerCup.Flex se colocó:
 
 	dias = ( "Lunes" | "Martes" | "Miércoles" | "Jueves" | "Viernes" | "Sábado" | "Domingo" )
 
@@ -633,7 +633,7 @@
 	 . {return new Symbol(sym.Error, yychar,yyline,yytext());}
 	 
 ---
-###Para el archivo de Sintax.cup se colocó:
+### Para el archivo de Sintax.cup se colocó:
 	/* Terminales */
 	terminal dias, evento, descanso, Error;
 
@@ -668,7 +668,7 @@
 				   | /* vacío */ ;
 				   
 ---
-###Y por último, para los tokens en Tokens.java, se colocó:
+### Y por último, para los tokens en Tokens.java, se colocó:
 	public enum Tokens {
 	 dias,
     evento,
